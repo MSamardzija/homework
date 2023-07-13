@@ -31,6 +31,35 @@ body {
   width: 100%;
   margin: auto;
   padding: 20px 40px;
+  position: relative;
+}
+
+.time-span__events {
+  font-size: 13px;
+  height: 20px;
+  line-height: 40px;
+  width: 100%;
+  font-weight: 700;
+  position: relative;
+}
+
+.time-span__events span {
+  position: absolute;
+  height: 12px;
+  top: 0;
+  left: 19%;
+  margin: 0px -5px;
+  z-index: 20;
+}
+
+.time-span__events span::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  border-right: 2px dotted black;
+  height: 54px;
+  margin: -56px -26px;
+  z-index: 20;
 }
 
 .time-span__fixed {

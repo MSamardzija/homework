@@ -5,6 +5,7 @@ const redBox = document.querySelector('.time-span__red')
 const blueBox = document.querySelector('.time-span__blue')
 
 // Time array total needs to be 90min
+// Every second number in array is team blue
 const time = [2, 3, 5, 5, 3, 5, 15, 25, 5, 10, 5, 5, 2]
 let position = 0
 
