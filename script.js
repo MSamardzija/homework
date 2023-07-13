@@ -1,9 +1,47 @@
-const container = document.querySelector('#item-2 div')
-const container2 = document.querySelector('#item-3 div')
-const red = '#c90f32'
-const blue = '#00448b'
+//
+// Time Line
+//
+const redBox = document.querySelector('.time-span__red')
+const blueBox = document.querySelector('.time-span__blue')
 
-const data = {
+// Time array total needs to be 90min
+const time = [2, 3, 5, 5, 3, 5, 15, 25, 5, 10, 5, 5, 2]
+let position = 0
+
+// Proportion of 90min to 100% width so 15min of possession matches 15% of time line
+const proportions = (value) => {
+  let sum = 0
+  sum = (100 * value) / 90
+  return Math.round(sum * 100) / 100
+}
+
+for (let i = 0; i < time.length; i++) {
+  const box = document.createElement('div')
+  if (i % 2 == 0) {
+    box.style.width = proportions(time[i]) + '%'
+    box.style.left = position + '%'
+    box.className = 'red-box'
+    redBox.appendChild(box)
+  } else {
+    box.style.width = proportions(time[i]) + '%'
+    box.style.left = position + '%'
+    box.className = 'blue-box'
+    blueBox.appendChild(box)
+  }
+  position += time[i] - (time[i] - proportions(time[i]))
+}
+
+//
+// Player positions
+//
+const leftContainer = document.querySelector('#item-2 div')
+const rightContainer = document.querySelector('#item-3 div')
+const redTeam = '#c90f32'
+const blueTeam = '#00448b'
+
+// First value goes from top to bottom in %
+// Second value goes from left to right in %
+const teamA = {
   player0: [100, 50],
   player1: [30, 50],
   player2: [50, 80],
@@ -17,7 +55,7 @@ const data = {
   player10: [77, 50],
 }
 
-const data2 = {
+const teamB = {
   player0: [0, 50],
   player1: [25, 20],
   player2: [20, 40],
@@ -31,17 +69,17 @@ const data2 = {
   player10: [70, 70],
 }
 
-const addPlayers = (positions, cont, color) => {
-  Object.keys(positions).forEach((key, index) => {
-    const newItem = document.createElement('span')
-    newItem.innerText = '№'
-    newItem.style.top = `max(1px, calc(${positions[key][0]}% - 15px))`
-    newItem.style.left = `max(1px, calc(${positions[key][1]}% - 15px))`
-    newItem.className = 'player-dot'
-    newItem.style.backgroundColor = color
-    cont.appendChild(newItem)
+const addPlayers = (element, cordinates, color) => {
+  Object.keys(cordinates).forEach((key, index) => {
+    const newPlayer = document.createElement('span')
+    newPlayer.innerText = '№'
+    newPlayer.style.top = `max(1px, calc(${cordinates[key][0]}% - 15px))`
+    newPlayer.style.left = `max(1px, calc(${cordinates[key][1]}% - 15px))`
+    newPlayer.className = 'player-dot'
+    newPlayer.style.backgroundColor = color
+    element.appendChild(newPlayer)
   })
 }
 
-addPlayers(data, container, blue)
-addPlayers(data2, container2, red)
+addPlayers(leftContainer, teamA, blueTeam)
+addPlayers(rightContainer, teamB, redTeam)

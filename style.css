@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
 }
 
-header {
+.header {
   width: 100%;
   padding: 20px 20px 16px 20px;
   display: flex;
@@ -21,31 +21,35 @@ header {
   background-color: #81d3ef;
 }
 
-.gray-text {
+.header .gray-text {
   font-weight: 400;
   color: gray;
 }
 
 .time-span {
-  width: 1850px;
+  max-width: 1850px;
+  width: 100%;
   margin: auto;
   padding: 20px 40px;
 }
 
-.time-span__box {
-  height: 100px;
-}
-
-.time-span__time {
+.time-span__fixed {
   font-size: 13px;
   height: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: end;
   font-weight: 700;
 }
 
-.time-span__posetion {
-  height: 60px;
+.time-span__fixed .dotted-line:after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  border-right: 2px dotted black;
+  height: 82px;
+  margin: -84px -5px;
+  z-index: 20;
 }
 
 .time-span__red {
@@ -66,30 +70,69 @@ header {
 
 .red-box {
   background-color: #c90f32;
-  width: 25px;
   height: 25px;
   position: absolute;
   bottom: 0;
 }
 .blue-box {
   background-color: #00448b;
-  width: 55px;
   height: 25px;
   position: absolute;
   top: 0;
 }
 
 /* MainSection */
-.main-section {
+.main {
   width: 100%;
   padding: 10px 10px 30px 10px;
   height: 800px;
   display: flex;
 }
 
-.angry-grid {
-  display: grid;
+/* Vertical lines */
+.vertical-lines {
+  background-color: #81d3ef;
+  height: 90%;
+  min-width: 20px;
+  position: relative;
+  margin: auto 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.vertical-lines:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #81d3ef;
+}
+
+.vertical-lines::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #81d3ef;
+}
+
+.white-dots {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.grid-layout {
+  display: grid;
   grid-template-rows: 100px 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
@@ -137,7 +180,6 @@ header {
   grid-column-end: 5;
 }
 
-/* Customs */
 #item-0 > div {
   display: flex;
   align-items: center;
@@ -170,6 +212,7 @@ header {
 .players-list td {
   padding: 3px 10px 0px 10px;
 }
+
 /* Match formation */
 .match-formation {
   display: flex;
@@ -186,47 +229,7 @@ header {
   font-weight: 600;
 }
 
-/* Vertical lines */
-#vertical-lines {
-  background-color: #81d3ef;
-  height: 90%;
-  width: 20px;
-  position: relative;
-  margin: auto 20px 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#vertical-lines:before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  border-left: 1cap solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #81d3ef;
-}
-#vertical-lines::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  right: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #81d3ef;
-}
-
-.white-dots {
-  height: 12px;
-  width: 12px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 5px 0;
-}
-
-/* player dots */
+/* Player football field dots */
 #item-2 div,
 #item-3 div {
   width: 100%;

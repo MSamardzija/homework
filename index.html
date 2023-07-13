@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <header>
+  <!-- Header -->
+  <header class="header">
     <img src="/assets/imgs/2022_FIFA_World_Cup.png" width="270px" height="70px" alt="Fifa world cup Quatar 2022" />
     <h3>
       21 November 2022 - Ahmad Bin Ali Stadium - 22:00
@@ -18,38 +19,33 @@
     <img src="/assets/imgs/SMRT4.png" width="200px" height="70px" alt="Smart stats logo" />
   </header>
 
+  <!-- Time ball possession -->
   <section class="time-span">
-    <div class="time-span__box">
-      <aside class="time-span__time">
-        <span>0</span>
-        <span>15</span>
-        <span>30</span>
-        <span>45+</span>
-        <span>60</span>
-        <span>75</span>
-        <span>90</span>
-      </aside>
-      <main class="time-span__posetion">
-        <div class="time-span__red">
-          <div class="red-box"></div>
-          <div class="red-box"></div>
-        </div>
-        <div class="time-span__blue">
-          <div class="blue-box"></div>
-
-        </div>
-      </main>
-    </div>
+    <aside class="time-span__fixed">
+      <span>0</span>
+      <span class="dotted-line">15</span>
+      <span class="dotted-line">30</span>
+      <span>45+</span>
+      <span class="dotted-line">60</span>
+      <span class="dotted-line">75</span>
+      <span>90</span>
+    </aside>
+    <main>
+      <div class="time-span__red">
+      </div>
+      <div class="time-span__blue">
+      </div>
+    </main>
   </section>
-  <!-- Main Section -->
 
-  <section class="main-section">
-    <aside id="vertical-lines">
+  <!-- Main Section -->
+  <section class="main">
+    <aside class="vertical-lines">
       <span class="white-dots"></span>
       <span class="white-dots"></span>
       <span class="white-dots"></span>
     </aside>
-    <main class="angry-grid">
+    <main class="grid-layout">
       <!-- Top ROW -->
       <div id="item-0">
         <div>
@@ -251,7 +247,7 @@
         </section>
       </div>
     </main>
-    <aside id="vertical-lines">
+    <aside class="vertical-lines">
       <span class="white-dots"></span>
       <span class="white-dots"></span>
       <span class="white-dots"></span>
