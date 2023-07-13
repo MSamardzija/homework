@@ -30,7 +30,7 @@ body {
   max-width: 1850px;
   width: 100%;
   margin: auto;
-  padding: 20px 40px;
+  padding: 5px 40px;
   position: relative;
 }
 
@@ -63,18 +63,18 @@ body {
   content: '';
   position: absolute;
   border-right: 2px dotted black;
-  height: 46px;
+  height: 40px;
   margin: -55px 0px;
   z-index: 20;
   left: 0;
 }
 
 .time-span__events .event::after {
-  top: 93px;
+  top: 96px;
 }
 
 .time-span__events__ .event::after {
-  top: 11px;
+  top: 14px;
 }
 
 .time-span__fixed {
@@ -128,7 +128,7 @@ body {
 /* MainSection */
 .main {
   width: 100%;
-  padding: 10px 10px 30px 10px;
+  padding: 5px 10px 30px 10px;
   height: 800px;
   display: flex;
 }
