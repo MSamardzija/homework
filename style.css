@@ -34,7 +34,8 @@ body {
   position: relative;
 }
 
-.time-span__events {
+.time-span__events,
+.time-span__events__ {
   font-size: 13px;
   height: 20px;
   line-height: 40px;
@@ -43,23 +44,37 @@ body {
   position: relative;
 }
 
-.time-span__events span {
+.event {
   position: absolute;
-  height: 12px;
-  top: 0;
-  left: 19%;
-  margin: 0px -5px;
-  z-index: 20;
 }
 
-.time-span__events span::after {
+.r .fa-square::before {
+  color: red;
+  padding-right: 2px;
+}
+
+.y .fa-square::before {
+  color: yellow;
+  padding-right: 2px;
+}
+
+.time-span__events .event::after,
+.time-span__events__ .event::after {
   content: '';
-  position: relative;
-  display: inline-block;
+  position: absolute;
   border-right: 2px dotted black;
-  height: 54px;
-  margin: -56px -26px;
+  height: 46px;
+  margin: -55px 0px;
   z-index: 20;
+  left: 0;
+}
+
+.time-span__events .event::after {
+  top: 93px;
+}
+
+.time-span__events__ .event::after {
+  top: 11px;
 }
 
 .time-span__fixed {

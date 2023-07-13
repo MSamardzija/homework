@@ -32,6 +32,14 @@ for (let i = 0; i < time.length; i++) {
   position += time[i] - (time[i] - proportions(time[i]))
 }
 
+// EVENTS (Goal or cards)
+const events = document.querySelectorAll('.event')
+
+events.forEach((element) => {
+  element.style.left =
+    proportions(parseInt(element.children[0].innerHTML)) + '%'
+})
+
 //
 // Player positions
 //
