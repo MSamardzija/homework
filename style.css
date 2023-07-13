@@ -38,10 +38,17 @@ body {
 .time-span__events__ {
   font-size: 13px;
   height: 20px;
-  line-height: 40px;
   width: 100%;
   font-weight: 700;
   position: relative;
+}
+
+.time-span__events {
+  line-height: 40px;
+}
+
+.time-span i {
+  font-size: 12px;
 }
 
 .event {
